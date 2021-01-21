@@ -12,6 +12,6 @@ routes.get('/', (request: Request, response: Response) => {
 routes.get('/collects', collectController.index);
 routes.get('/collects/:id', collectController.show);
 routes.post('/collects', collectController.store);
-routes.get('/collects/recycled-products/all', collectController.indexRecycledProducts);
+//routes.get('/collects/recycled-products/all', collectController.indexRecycledProducts);
 
 export default routes;

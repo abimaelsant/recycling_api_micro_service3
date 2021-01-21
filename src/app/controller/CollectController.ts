@@ -9,11 +9,11 @@ class CollectController {
         return response.json(collects);
     }
 
-    async indexRecycledProducts(request: Request, response: Response) {
+    /*async indexRecycledProducts(request: Request, response: Response) {
         const collectRepository = new CollectRepository();
         const recycleds = await collectRepository.findRecycledProducts();
         return response.json(recycleds);
-    }
+    }*/
 
     async show(request: Request, response: Response) {
         const collectRepository = new CollectRepository();
@@ -24,7 +24,6 @@ class CollectController {
 
     async store(request: Request, response: Response) {
         const collectRepository = new CollectRepository();
-        request.body.userId = request.user.id;
         const collect = await collectRepository.create(request.body);
         return response.status(201).json(collect)
     }
