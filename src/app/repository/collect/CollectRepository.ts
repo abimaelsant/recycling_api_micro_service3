@@ -1,6 +1,6 @@
 import { getRepository, Repository } from 'typeorm';
 import Collect from '../../entity/Collect';
-import RecycledProductRepository from '../recycledProduct/RecycledProductRepository';
+//import RecycledProductRepository from '../recycledProduct/RecycledProductRepository';
 
 class TaskRepository {
     private collect:Repository<Collect>;
@@ -14,11 +14,11 @@ class TaskRepository {
         return collects;
     }
 
-    async findRecycledProducts(): Promise<any> {
+    /*async findRecycledProducts(): Promise<any> {
         const recycledRepository = new RecycledProductRepository();
         const recycleds = await recycledRepository.findAll();
         return recycleds;
-    }
+    }*/
 
     async findById(id:number): Promise<any> {
         const collect = await this.collect.findOne(id);
